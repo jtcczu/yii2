@@ -1,18 +1,12 @@
 版本
 ==========
 
-A good API is *versioned*: changes and new features are implemented in new versions of the API instead of continually altering just one version. Unlike Web applications, with which you have full control of both the client-side and server-side
-code, APIs are meant to be used by clients beyond your control. For this reason, backward
-compatibility (BC) of the APIs should be maintained whenever possible. If a change that may break BC is necessary, you should introduce it in new version of the API, and bump up the version number. Existing clients can continue to use the old, working version of the API; and new or upgraded clients can get the new functionality in the new API version. 
+一个好的 API 版本: 变更和新的功能应该在 API 新版本中实现，而不是在一个版本上持续更改。与Web应用程序不同，您可以完全控制客户端和服务器端代码，APIs 是为了给超出控制的客户端使用。因此，应该尽可能的保持向后兼容性，如果有一些变化不能向后兼容，你应该在新版本的 API 中采用它同时增加版本号。现有客户端可以继续使用旧版本的API；新的或升级的客户端可以在新的API版本中获得新的功能。
 
-> Tip: Refer to [Semantic Versioning](http://semver.org/)
-for more information on designing API version numbers.
+> 建议: 可以参考[Semantic Versioning](http://semver.org/)来获取更多关于设计API版本号的信息
 
 关于如何实现API版本，一个常见的做法是在API的URL中嵌入版本号。例如，`http://example.com/v1/users`代表`/users`版本1的API. 
 另一种API版本化的方法最近用的非常多的是把版本号放入HTTP请求头，通常是通过`Accept`头，如下：
-
-Another method of API versioning,
-which has gained momentum recently, is to put the version number in the HTTP request headers. This is typically done through the `Accept` header:
 
 ```
 // 通过参数
